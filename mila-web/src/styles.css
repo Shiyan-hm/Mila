@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+
+margin:0;
+
+background:#F7F1E8;
+
+color:#756257;
+
+font-family:
+
+"PingFang SC",
+sans-serif;
+
+}
+
+
+.card{
+
+background:#FFFDF8;
+
+border-radius:28px;
+
+padding:20px;
+
+box-shadow:
+0 10px 30px rgba(100,80,60,.08);
+
+}
