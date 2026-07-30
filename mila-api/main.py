@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 
 from app.routers import (
-    auth,
     study,
     planner,
     ai
@@ -17,10 +16,6 @@ version="1.0"
 )
 
 
-app.include_router(
-auth.router,
-prefix="/api/v1/auth"
-)
 
 
 app.include_router(
