@@ -1,0 +1,83 @@
+version: "3.9"
+
+
+services:
+
+
+  mila-web:
+
+    build:
+
+      context: ./mila-web
+
+    ports:
+
+      - "3000:80"
+
+
+
+  mila-api:
+
+
+    build:
+
+      context: ./mila-api
+
+
+    ports:
+
+      - "8000:8000"
+
+
+
+    env_file:
+
+      - .env
+
+
+
+    depends_on:
+
+      - postgres
+
+
+
+  postgres:
+
+
+    image:
+      postgres:16
+
+
+    environment:
+
+
+      POSTGRES_USER:
+        mila
+
+
+      POSTGRES_PASSWORD:
+        mila123
+
+
+      POSTGRES_DB:
+        mila
+
+
+
+    ports:
+
+      - "5432:5432"
+
+
+
+  redis:
+
+
+    image:
+      redis:7
+
+
+    ports:
+
+      - "6379:6379"
